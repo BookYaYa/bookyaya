@@ -1,9 +1,9 @@
 {
-  "name": "Saunatime",
-  "short_name": "Saunatime",
+  "name": "BookYaYa",
+  "short_name": "BookYaYa",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#C0392B",
+  "theme_color": "#2B9B9E",
   "background_color": "#FFFFFF",
   "icons": [
     {
