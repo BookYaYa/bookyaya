@@ -37,12 +37,7 @@ export const amenities = [
   },
 ];
 
-export const categories = [
-  { key: 'smoke', label: 'Smoke' },
-  { key: 'electric', label: 'Electric' },
-  { key: 'wood', label: 'Wood' },
-  { key: 'other', label: 'Other' },
-];
+export const categories = [{ key: 'online', label: 'Online' }, { key: 'local', label: 'Local' }];
 
 // Price filter configuration
 // Note: unlike most prices this is not handled in subunits

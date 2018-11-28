@@ -56,7 +56,6 @@ const EditListingDescriptionPanel = props => {
         updated={panelUpdated}
         updateError={errors.updateListingError}
         updateInProgress={updateInProgress}
-        categories={config.custom.categories}
       />
     </div>
   );

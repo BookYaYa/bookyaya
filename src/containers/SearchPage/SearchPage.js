@@ -212,32 +212,6 @@ export class SearchPageComponent extends Component {
               priceFilter: filters.priceFilter,
             }}
           />
-          <ModalInMobile
-            className={css.mapPanel}
-            id="SearchPage.map"
-            isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
-            onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
-            showAsModalMaxWidth={MODAL_BREAKPOINT}
-            onManageDisableScrolling={onManageDisableScrolling}
-          >
-            <div className={css.mapWrapper}>
-              {shouldShowSearchMap ? (
-                <SearchMap
-                  reusableContainerClassName={css.map}
-                  activeListingId={activeListingId}
-                  bounds={bounds}
-                  center={origin}
-                  isSearchMapOpenOnMobile={this.state.isSearchMapOpenOnMobile}
-                  location={location}
-                  listings={mapListings || []}
-                  onMapMoveEnd={this.onMapMoveEnd}
-                  onCloseAsModal={() => {
-                    onManageDisableScrolling('SearchPage.map', false);
-                  }}
-                />
-              ) : null}
-            </div>
-          </ModalInMobile>
         </div>
       </Page>
     );
