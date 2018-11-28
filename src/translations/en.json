@@ -262,7 +262,7 @@
   "Footer.goToFacebook": "Go to Facebook page",
   "Footer.goToInstagram": "Go to Instagram page",
   "Footer.goToTwitter": "Go to Twitter page",
-  "Footer.organizationDescription": "The largest marketplace to book events with authors.",
+  "Footer.organizationDescription": "The largest marketplace for live author appearances.",
   "Footer.privacy": "Privacy",
   "Footer.privacyPolicy": "Privacy policy",
   "Footer.searchAhvenanmaa": "Ahvenanmaa",
@@ -302,7 +302,7 @@
   "InboxPage.title": "Inbox",
   "LandingPage.schemaDescription":
     "Book a event using Book Ya Ya or earn some income by sharing author profile",
-  "LandingPage.schemaTitle": "Book events with your favorite authors | {siteTitle}",
+  "LandingPage.schemaTitle": "Book live events with your favorite authors | {siteTitle}",
   "ListingCard.hostedBy": "Hosted by {authorName}.",
   "ListingCard.perUnit": "per night",
   "ListingCard.unsupportedPrice": "({currency})",
@@ -395,7 +395,7 @@
   "NotFoundPage.title": "Page not found",
   "Page.schemaDescription":
     "Book a event using Book Ya Ya or earn some income by sharing author profile",
-  "Page.schemaTitle": "Book events with your favorite authors | {siteTitle}",
+  "Page.schemaTitle": "Book live events with your favorite authors | {siteTitle}",
   "PaginationLinks.next": "Next page",
   "PaginationLinks.previous": "Previous page",
   "PaginationLinks.toPage": "Go to page {page}",
@@ -623,9 +623,9 @@
   "SearchPage.searchError": "Search failed. Please try again.",
   "SearchResultsPanel.nextPage": "Next page",
   "SearchResultsPanel.previousPage": "Previous page",
-  "SectionHero.browseButton": "Browse events",
-  "SectionHero.subTitle": "The largest marketplace to book events with authors.",
-  "SectionHero.title": "Book events with your favorite authors.",
+  "SectionHero.browseButton": "Explore available authors",
+  "SectionHero.subTitle": "The largest marketplace for live author appearances.",
+  "SectionHero.title": "Book live events with your favorite authors.",
   "SectionHowItWorks.createListingLink":
     "You can create an event with an author in just a few clicks!",
   "SectionHowItWorks.part1Text":
@@ -640,7 +640,7 @@
   "SectionHowItWorks.titleLineOne": "The author ritual",
   "SectionHowItWorks.titleLineTwo": "(or how Book Ya Ya works).",
   "SectionLocations.listingsInLocation": "Events in {location}",
-  "SectionLocations.title": "Explore available authors",
+  "SectionLocations.title": "Featured authors",
   "SelectMultipleFilter.labelSelected": "{labelText} • {count}",
   "SelectMultipleFilterForm.cancel": "Cancel",
   "SelectMultipleFilterForm.clear": "Clear",
