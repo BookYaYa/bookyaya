@@ -18,20 +18,33 @@
 }
 
 .sectionImages {
+  @media (--viewportMedium) {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    position: relative;
+  }
 }
 
 .threeToTwoWrapper {
   /* Layout */
-  display: block;
-  width: 100%;
-  position: relative;
+  flex-basis: 100%;
+  margin-bottom: 23px;
+  overflow: hidden;
 
   @media (--viewportMedium) {
-    padding: 0;
+    margin-top: 50px;
+    margin-bottom: 51px;
+    flex-shrink: 0;
   }
 
   @media (--viewportLarge) {
-    padding: 36px 36px 0 36px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    /* contentContainer's full width - (bookingColumn + gutters) */
+    flex-basis: calc(100% - 491px);
+    flex-shrink: 0;
   }
 }
 
@@ -128,13 +141,10 @@
 
   @media (--viewportMedium) {
     position: static;
-    top: auto;
-    bottom: auto;
-    left: auto;
-    right: auto;
     height: calc(0.41 * 100vw);
     max-height: 50vh;
     object-fit: cover;
+    object-position: center top;
     border-radius: var(--borderRadius);
 
     &:hover {

@@ -54,7 +54,7 @@ const ThumbnailWrapper = props => {
               rootClassName={css.rootForImage}
               image={image}
               alt={savedImageAltText}
-              variants={['landscape-crop', 'landscape-crop2x']}
+              variants={['square-small', 'square-small2x']}
             />
           </div>
           <RemoveImageButton onClick={handleRemoveClick} />

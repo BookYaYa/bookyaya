@@ -396,8 +396,8 @@ const IMAGE_VARIANTS = {
     'variants.square-small2x',
 
     // Listing images:
-    'variants.landscape-crop',
-    'variants.landscape-crop2x',
+    'variants.square-small',
+    'variants.square-small2x',
   ],
 };
 

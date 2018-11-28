@@ -51,7 +51,7 @@ const ListingCard = props => {
               alt={title}
               noImageMessage={intl.formatMessage({ id: 'SearchMapInfoCard.noImage' })}
               image={firstImage}
-              variants={['landscape-crop', 'landscape-crop2x']}
+              variants={['square-small', 'square-small2x']}
               sizes="250px"
             />
           </div>

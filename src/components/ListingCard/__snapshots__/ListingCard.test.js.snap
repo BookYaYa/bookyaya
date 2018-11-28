@@ -22,8 +22,8 @@ exports[`ListingCard matches snapshot 1`] = `
         sizes={null}
         variants={
           Array [
-            "landscape-crop",
-            "landscape-crop2x",
+            "square-small",
+            "square-small2x",
           ]
         }
       />
@@ -46,7 +46,7 @@ exports[`ListingCard matches snapshot 1`] = `
     <div>
       <div>
         listing1
-         
+
         title
       </div>
       <div>

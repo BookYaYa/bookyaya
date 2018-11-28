@@ -243,7 +243,7 @@ ManageListingsPage.loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['images'],
-    'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+    'fields.image': ['variants.square-small', 'variants.square-small2x'],
     'limit.images': 1,
   });
 };

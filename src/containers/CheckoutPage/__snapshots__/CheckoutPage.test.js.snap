@@ -31,8 +31,8 @@ exports[`CheckoutPage matches snapshot 1`] = `
         rootClassName={null}
         variants={
           Array [
-            "landscape-crop",
-            "landscape-crop2x",
+            "square-small",
+            "square-small2x",
           ]
         }
       />
@@ -105,8 +105,8 @@ exports[`CheckoutPage matches snapshot 1`] = `
           rootClassName={null}
           variants={
             Array [
-              "landscape-crop",
-              "landscape-crop2x",
+              "square-small",
+              "square-small2x",
             ]
           }
         />

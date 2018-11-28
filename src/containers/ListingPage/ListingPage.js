@@ -427,42 +427,17 @@ export class ListingPageComponent extends Component {
                 onManageDisableScrolling={onManageDisableScrolling}
               />
               <div className={css.contentContainer}>
-                <SectionAvatar user={currentAuthor} params={params} />
                 <div className={css.mainContent}>
                   <SectionHeading
                     priceTitle={priceTitle}
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
                     category={category}
-                    hostLink={hostLink}
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
                   />
                   <SectionDescription description={description} />
-                  <SectionFeatures
-                    options={amenitiesConfig}
-                    selectedOptions={publicData.amenities}
-                  />
-                  <SectionRulesMaybe publicData={publicData} />
-                  <SectionMapMaybe
-                    geolocation={geolocation}
-                    publicData={publicData}
-                    listingId={currentListing.id}
-                  />
                   <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
-                  <SectionHost
-                    title={title}
-                    listing={currentListing}
-                    authorDisplayName={authorDisplayName}
-                    onContactUser={this.onContactUser}
-                    isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                    onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                    sendEnquiryError={sendEnquiryError}
-                    sendEnquiryInProgress={sendEnquiryInProgress}
-                    onSubmitEnquiry={this.onSubmitEnquiry}
-                    currentUser={currentUser}
-                    onManageDisableScrolling={onManageDisableScrolling}
-                  />
                 </div>
                 <SectionBooking
                   listing={currentListing}

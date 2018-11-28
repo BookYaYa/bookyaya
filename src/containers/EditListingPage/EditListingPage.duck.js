@@ -282,7 +282,7 @@ export function requestCreateListing(data) {
           requestShowListing({
             id,
             include: ['author', 'images'],
-            'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+            'fields.image': ['variants.square-small', 'variants.square-small2x'],
           })
         );
         return response;
@@ -328,7 +328,7 @@ export function requestUpdateListing(tab, data) {
         const payload = {
           id,
           include: ['author', 'images'],
-          'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+          'fields.image': ['variants.square-small', 'variants.square-small2x'],
         };
         return dispatch(requestShowListing(payload));
       })
@@ -356,7 +356,7 @@ export function loadData(params) {
     const payload = {
       id: new UUID(id),
       include: ['author', 'images'],
-      'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+      'fields.image': ['variants.square-small', 'variants.square-small2x'],
     };
     return dispatch(requestShowListing(payload));
   };

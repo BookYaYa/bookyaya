@@ -238,7 +238,7 @@ export const ManageListingCardComponent = props => {
             rootClassName={css.rootForImage}
             alt={title}
             image={firstImage}
-            variants={['landscape-crop', 'landscape-crop2x']}
+            variants={['square-small', 'square-small2x']}
             sizes={renderSizes}
           />
         </div>

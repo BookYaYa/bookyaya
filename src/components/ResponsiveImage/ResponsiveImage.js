@@ -3,26 +3,26 @@
  *   <ResponsiveImage
  *     alt="ListingX"
  *     image={imageDataFromSDK}
- *     variants={['landscape-crop', 'landscape-crop2x']}
+ *     variants={['square-small', 'square-small2x']}
  *   />
  *   // produces:
  *   <img
  *     alt="ListingX"
- *     src="url/to/landscape-crop.jpg"
- *     srcSet="url/to/landscape-crop.jpg 400w, url/to/landscape-crop2x.jpg 800w" />
+ *     src="url/to/square-small.jpg"
+ *     srcSet="url/to/square-small.jpg 400w, url/to/square-small2x.jpg 800w" />
  *
  * Usage with sizes:
  *   <ResponsiveImage
  *     alt="ListingX"
  *     image={imageDataFromSDK}
- *     variants={['landscape-crop', 'landscape-crop2x']}
+ *     variants={['square-small', 'square-small2x']}
  *     sizes="(max-width: 600px) 100vw, 50vw"
  *   />
  *   // produces:
  *   <img
  *     alt="ListingX"
- *     src="url/to/landscape-crop.jpg"
- *     srcSet="url/to/landscape-crop.jpg 400w, url/to/landscape-crop2x.jpg 800w"
+ *     src="url/to/square-small.jpg"
+ *     srcSet="url/to/square-small.jpg 400w, url/to/square-small2x.jpg 800w"
  *     sizes="(max-width: 600px) 100vw, 50vw" />
  *
  *   // This means that below 600px image will take as many pixels there are available on current

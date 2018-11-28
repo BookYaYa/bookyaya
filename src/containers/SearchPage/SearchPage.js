@@ -322,7 +322,7 @@ SearchPage.loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['author', 'images'],
-    'fields.image': ['variants.landscape-crop', 'variants.landscape-crop2x'],
+    'fields.image': ['variants.square-small', 'variants.square-small2x'],
     'limit.images': 1,
   });
 };

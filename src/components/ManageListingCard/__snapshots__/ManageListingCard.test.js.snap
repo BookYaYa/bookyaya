@@ -17,8 +17,8 @@ exports[`ManageListingCard matches snapshot 1`] = `
         sizes={null}
         variants={
           Array [
-            "landscape-crop",
-            "landscape-crop2x",
+            "square-small",
+            "square-small2x",
           ]
         }
       />
@@ -119,7 +119,7 @@ exports[`ManageListingCard matches snapshot 1`] = `
         >
           listing1
         </span>
-         
+
         title
       </div>
     </div>
