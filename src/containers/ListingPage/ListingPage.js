@@ -30,14 +30,9 @@ import { TopbarContainer, NotFoundPage } from '../../containers';
 
 import { sendEnquiry, loadData, setInitialValues } from './ListingPage.duck';
 import SectionImages from './SectionImages';
-import SectionAvatar from './SectionAvatar';
 import SectionHeading from './SectionHeading';
 import SectionDescription from './SectionDescription';
-import SectionFeatures from './SectionFeatures';
 import SectionReviews from './SectionReviews';
-import SectionHost from './SectionHost';
-import SectionRulesMaybe from './SectionRulesMaybe';
-import SectionMapMaybe from './SectionMapMaybe';
 import SectionBooking from './SectionBooking';
 import css from './ListingPage.css';
 
@@ -200,7 +195,6 @@ export class ListingPageComponent extends Component {
       timeSlots,
       fetchTimeSlotsError,
       categoriesConfig,
-      amenitiesConfig,
     } = this.props;
 
     const isBook = !!parse(location.search).book;
@@ -231,13 +225,7 @@ export class ListingPageComponent extends Component {
       return <NamedRedirect name="ListingPage" params={params} search={location.search} />;
     }
 
-    const {
-      description = '',
-      geolocation = null,
-      price = null,
-      title = '',
-      publicData,
-    } = currentListing.attributes;
+    const { description = '', price = null, title = '', publicData } = currentListing.attributes;
 
     const richTitle = (
       <span>
@@ -433,13 +421,14 @@ export class ListingPageComponent extends Component {
                     formattedPrice={formattedPrice}
                     richTitle={richTitle}
                     category={category}
+                    hostLink={hostLink}
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
                   />
                   <SectionDescription description={description} />
-                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
                 </div>
                 <SectionBooking
+                  title={title}
                   listing={currentListing}
                   isOwnListing={isOwnListing}
                   isClosed={isClosed}
@@ -448,14 +437,23 @@ export class ListingPageComponent extends Component {
                   price={price}
                   formattedPrice={formattedPrice}
                   priceTitle={priceTitle}
+                  hostLink={hostLink}
+                  showContactUser={showContactUser}
                   handleBookingSubmit={handleBookingSubmit}
                   richTitle={richTitle}
-                  authorDisplayName={authorDisplayName}
                   handleBookButtonClick={handleBookButtonClick}
                   handleMobileBookModalClose={handleMobileBookModalClose}
-                  onManageDisableScrolling={onManageDisableScrolling}
                   timeSlots={timeSlots}
                   fetchTimeSlotsError={fetchTimeSlotsError}
+                  authorDisplayName={authorDisplayName}
+                  onContactUser={this.onContactUser}
+                  isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                  onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                  sendEnquiryError={sendEnquiryError}
+                  sendEnquiryInProgress={sendEnquiryInProgress}
+                  onSubmitEnquiry={this.onSubmitEnquiry}
+                  currentUser={currentUser}
+                  onManageDisableScrolling={onManageDisableScrolling}
                 />
               </div>
             </div>
@@ -480,7 +478,6 @@ ListingPageComponent.defaultProps = {
   fetchTimeSlotsError: null,
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
-  amenitiesConfig: config.custom.amenities,
 };
 
 ListingPageComponent.propTypes = {
@@ -520,7 +517,6 @@ ListingPageComponent.propTypes = {
   onSendEnquiry: func.isRequired,
 
   categoriesConfig: array,
-  amenitiesConfig: array,
 };
 
 const mapStateToProps = state => {

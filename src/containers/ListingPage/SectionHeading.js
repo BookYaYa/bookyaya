@@ -1,11 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { InlineTextButton } from '../../components';
 
 import css from './ListingPage.css';
 
 const SectionHeading = props => {
-  const { priceTitle, formattedPrice, richTitle, category, showContactUser, onContactUser } = props;
+  const { priceTitle, formattedPrice, richTitle } = props;
   return (
     <div className={css.sectionHeading}>
       <div className={css.desktopPriceContainer}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { ModalInMobile, Button } from '../../components';
+import { InlineTextButton, Modal, ModalInMobile, Button } from '../../components';
+import { EnquiryForm } from '../../forms';
 import { BookingDatesForm } from '../../forms';
 
 import css from './ListingPage.css';
@@ -10,6 +11,7 @@ const MODAL_BREAKPOINT = 1023;
 
 const SectionBooking = props => {
   const {
+    title,
     listing,
     isOwnListing,
     isClosed,
@@ -18,6 +20,8 @@ const SectionBooking = props => {
     price,
     formattedPrice,
     priceTitle,
+    showContactUser,
+    onContactUser,
     handleBookingSubmit,
     richTitle,
     authorDisplayName,
@@ -26,6 +30,11 @@ const SectionBooking = props => {
     onManageDisableScrolling,
     timeSlots,
     fetchTimeSlotsError,
+    isEnquiryModalOpen,
+    onCloseEnquiryModal,
+    sendEnquiryError,
+    onSubmitEnquiry,
+    sendEnquiryInProgress,
   } = props;
   const showClosedListingHelpText = listing.id && isClosed;
 
@@ -49,6 +58,25 @@ const SectionBooking = props => {
           </div>
         </div>
 
+        <div className={css.bookingHeading}>
+          <h2 className={css.bookingTitle}>
+            <FormattedMessage id="ListingPage.contactTitle" values={{ title: richTitle }} />
+          </h2>
+          <div className={css.bookingHelp}>
+            <FormattedMessage
+              id={
+                showClosedListingHelpText
+                  ? 'ListingPage.bookingHelpClosedListing'
+                  : 'ListingPage.contactHelp'
+              }
+            />
+          </div>
+          {showContactUser ? (
+            <Button rootClassName={css.contactButton} onClick={onContactUser}>
+              <FormattedMessage id="ListingPage.contactUser" />
+            </Button>
+          ) : null}
+        </div>
         <div className={css.bookingHeading}>
           <h2 className={css.bookingTitle}>
             <FormattedMessage id="ListingPage.bookingTitle" values={{ title: richTitle }} />
@@ -86,6 +114,10 @@ const SectionBooking = props => {
           </div>
         </div>
 
+        <Button rootClassName={css.contactButton} onClick={onContactUser}>
+          <FormattedMessage id="ListingPage.contactUser" />
+        </Button>
+
         {!isClosed ? (
           <Button rootClassName={css.bookButton} onClick={handleBookButtonClick}>
             <FormattedMessage id="ListingPage.ctaButtonMessage" />
@@ -96,6 +128,23 @@ const SectionBooking = props => {
           </div>
         )}
       </div>
+      <Modal
+        id="ListingPage.enquiry"
+        contentClassName={css.enquiryModalContent}
+        isOpen={isEnquiryModalOpen}
+        onClose={onCloseEnquiryModal}
+        onManageDisableScrolling={onManageDisableScrolling}
+      >
+        <EnquiryForm
+          className={css.enquiryForm}
+          submitButtonWrapperClassName={css.enquirySubmitButtonWrapper}
+          listingTitle={title}
+          authorDisplayName={authorDisplayName}
+          sendEnquiryError={sendEnquiryError}
+          onSubmit={onSubmitEnquiry}
+          inProgress={sendEnquiryInProgress}
+        />
+      </Modal>
     </div>
   );
 };

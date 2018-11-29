@@ -738,11 +738,20 @@
   }
 }
 
-.bookButton {
+.bookButton,
+.contactButton {
   @apply --marketplaceButtonStylesPrimary;
 
   /* Clear padding that is set for link elements looking like buttons */
   padding: 0;
+}
+
+.contactButton {
+  margin-right: 15px;
+
+  @media (--viewportLarge) {
+    margin-right: 0;
+  }
 }
 
 .closedListingButton {

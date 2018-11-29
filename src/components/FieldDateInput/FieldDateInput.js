@@ -4,6 +4,7 @@
  * NOTE: If you are using this component inside BookingDatesForm,
  * you should convert value.date to start date and end date before submitting it to API
  */
+
 import React, { Component } from 'react';
 import { bool, object, string, arrayOf } from 'prop-types';
 import { Field } from 'react-final-form';
