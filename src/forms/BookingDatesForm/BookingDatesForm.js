@@ -163,10 +163,7 @@ export class BookingDatesFormComponent extends Component {
                 format={null}
                 timeSlots={timeSlots}
                 useMobileMargins
-                // validate={composeValidators(
-                //   required(requiredMessage),
-                //   bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
-                // )}
+                validate={composeValidators(required(requiredMessage))}
               />
               {bookingInfo}
               <p className={css.smallPrint}>
