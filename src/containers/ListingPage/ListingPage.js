@@ -5,6 +5,7 @@ import { FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import moment from 'moment';
 import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
 import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
@@ -111,13 +112,21 @@ export class ListingPageComponent extends Component {
     const listing = getListing(listingId);
 
     const { bookingDates, ...bookingData } = values;
+    const endDate = moment(bookingDates.date)
+      .add(1, 'days')
+      .toDate();
+
+    console.log(values);
+    console.log(typeof endDate);
+    console.log(bookingDates.date);
+    console.log(endDate);
 
     const initialValues = {
       listing,
       bookingData,
       bookingDates: {
-        bookingStart: bookingDates.startDate,
-        bookingEnd: bookingDates.endDate,
+        bookingStart: bookingDates.date,
+        bookingEnd: endDate,
       },
     };
 

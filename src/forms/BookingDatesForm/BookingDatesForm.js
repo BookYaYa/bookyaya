@@ -9,7 +9,7 @@ import { required, bookingDatesRequired, composeValidators } from '../../util/va
 import { START_DATE, END_DATE } from '../../util/dates';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Form, PrimaryButton, FieldDateRangeInput } from '../../components';
+import { Form, PrimaryButton, FieldDateInput } from '../../components';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 import css from './BookingDatesForm.css';
@@ -33,16 +33,17 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
-    const { startDate, endDate } = e.bookingDates || {};
-    if (!startDate) {
-      e.preventDefault();
-      this.setState({ focusedInput: START_DATE });
-    } else if (!endDate) {
-      e.preventDefault();
-      this.setState({ focusedInput: END_DATE });
-    } else {
-      this.props.onSubmit(e);
-    }
+    // const { startDate, endDate } = e.bookingDates || {};
+    // if (!startDate) {
+    //   e.preventDefault();
+    //   this.setState({ focusedInput: START_DATE });
+    // } else if (!endDate) {
+    //   e.preventDefault();
+    //   this.setState({ focusedInput: END_DATE });
+    // } else {
+    console.log('fuck');
+    this.props.onSubmit(e);
+    // }
   }
 
   render() {
@@ -155,25 +156,18 @@ export class BookingDatesFormComponent extends Component {
           return (
             <Form onSubmit={handleSubmit} className={classes}>
               {timeSlotsError}
-              <FieldDateRangeInput
+              <FieldDateInput
                 className={css.bookingDates}
                 name="bookingDates"
-                unitType={unitType}
-                startDateId={`${form}.bookingStartDate`}
-                startDateLabel={bookingStartLabel}
-                startDatePlaceholderText={startDatePlaceholderText}
-                endDateId={`${form}.bookingEndDate`}
-                endDateLabel={bookingEndLabel}
-                endDatePlaceholderText={endDatePlaceholderText}
-                focusedInput={this.state.focusedInput}
-                onFocusedInputChange={this.onFocusedInputChange}
+                id={`${form}.bookingStartDate`}
+                placeholderText={startDatePlaceholderText}
                 format={null}
                 timeSlots={timeSlots}
                 useMobileMargins
-                validate={composeValidators(
-                  required(requiredMessage),
-                  bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
-                )}
+                // validate={composeValidators(
+                //   required(requiredMessage),
+                //   bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
+                // )}
               />
               {bookingInfo}
               <p className={css.smallPrint}>
