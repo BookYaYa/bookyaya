@@ -116,11 +116,6 @@ export class ListingPageComponent extends Component {
       .add(1, 'days')
       .toDate();
 
-    console.log(values);
-    console.log(typeof endDate);
-    console.log(bookingDates.date);
-    console.log(endDate);
-
     const initialValues = {
       listing,
       bookingData,

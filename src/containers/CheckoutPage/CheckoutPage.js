@@ -410,9 +410,6 @@ export class CheckoutPageComponent extends Component {
                 variants={['square-small', 'square-small2x']}
               />
             </div>
-            <div className={css.avatarWrapper}>
-              <AvatarMedium user={currentAuthor} disableProfileLink />
-            </div>
             <div className={css.detailsHeadings}>
               <h2 className={css.detailsTitle}>{listingTitle}</h2>
               <p className={css.detailsSubtitle}>

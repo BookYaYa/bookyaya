@@ -41,7 +41,6 @@ export class BookingDatesFormComponent extends Component {
     //   e.preventDefault();
     //   this.setState({ focusedInput: END_DATE });
     // } else {
-    console.log('fuck');
     this.props.onSubmit(e);
     // }
   }
