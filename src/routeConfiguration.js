@@ -5,6 +5,7 @@ import {
   CheckoutPage,
   ContactDetailsPage,
   EditListingPage,
+  EditEventPage,
   EmailVerificationPage,
   InboxPage,
   LandingPage,
@@ -117,11 +118,29 @@ const routeConfiguration = () => {
       ),
     },
     {
+      path: '/e/new',
+      name: 'NewEventPage',
+      auth: true,
+      component: () => (
+        <NamedRedirect
+          name="EditEventPage"
+          params={{ slug: draftSlug, id: draftId, type: 'new', tab: 'description' }}
+        />
+      ),
+    },
+    {
       path: '/l/:slug/:id/:type/:tab',
       name: 'EditListingPage',
       auth: true,
       component: props => <EditListingPage {...props} />,
       loadData: EditListingPage.loadData,
+    },
+    {
+      path: '/e/:slug/:id/:type/:tab',
+      name: 'EditEventPage',
+      auth: true,
+      component: props => <EditEventPage {...props} />,
+      loadData: EditEventPage.loadData,
     },
 
     // Canonical path should be after the `/l/new` path since they

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditListingPageComponent matches snapshot 1`] = `
+<Page
+  scrollingDisabled={false}
+  title="EditListingPage.titleCreateListing"
+>
+  <withRouter(Connect(TopbarContainerComponent)) />
+  <withViewport(InjectIntl(EditListingWizard))
+    currentUser={null}
+    errors={
+      Object {
+        "createListingsError": null,
+        "createStripeAccountError": null,
+        "showListingsError": null,
+        "updateListingError": null,
+        "uploadImageError": null,
+      }
+    }
+    fetchInProgress={false}
+    history={
+      Object {
+        "push": [Function],
+      }
+    }
+    id="EditListingWizard"
+    images={Array []}
+    newListingCreated={false}
+    onChange={[Function]}
+    onCreateListing={[Function]}
+    onCreateListingDraft={[Function]}
+    onImageUpload={[Function]}
+    onManageDisableScrolling={[Function]}
+    onPayoutDetailsFormChange={[Function]}
+    onPayoutDetailsSubmit={[Function]}
+    onRemoveImage={[Function]}
+    onUpdateImageOrder={[Function]}
+    onUpdateListing={[Function]}
+    onUpdateListingDraft={[Function]}
+    params={
+      Object {
+        "id": "id",
+        "slug": "slug",
+        "tab": "description",
+        "type": "new",
+      }
+    }
+  />
+</Page>
+`;

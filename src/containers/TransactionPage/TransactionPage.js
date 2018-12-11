@@ -66,6 +66,8 @@ export const TransactionPageComponent = props => {
     onDeclineSale,
   } = props;
 
+  console.log(props);
+
   const currentTransaction = ensureTransaction(transaction);
   const currentListing = ensureListing(currentTransaction.listing);
   const deletedListingTitle = intl.formatMessage({

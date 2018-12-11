@@ -11,6 +11,10 @@ export {
 export { default as CookieConsent } from './CookieConsent/CookieConsent';
 export { default as Discussion } from './Discussion/Discussion';
 export {
+  default as EditEventDescriptionPanel,
+} from './EditEventDescriptionPanel/EditEventDescriptionPanel';
+export { default as EditEventPoliciesPanel } from './EditEventPoliciesPanel/EditEventPoliciesPanel';
+export {
   default as EditListingDescriptionPanel,
 } from './EditListingDescriptionPanel/EditListingDescriptionPanel';
 export {
@@ -26,6 +30,7 @@ export {
 export {
   default as EditListingPricingPanel,
 } from './EditListingPricingPanel/EditListingPricingPanel';
+export { default as EditEventWizard } from './EditEventWizard/EditEventWizard';
 export { default as EditListingWizard } from './EditListingWizard/EditListingWizard';
 export { default as ExpandingTextarea } from './ExpandingTextarea/ExpandingTextarea';
 export { default as ExternalLink } from './ExternalLink/ExternalLink';

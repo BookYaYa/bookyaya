@@ -53,6 +53,7 @@ export class SearchPageComponent extends Component {
 
   filters() {
     const { categories, amenities, priceFilterConfig } = this.props;
+    console.log(this.props);
 
     return {
       categoryFilter: {
@@ -138,6 +139,8 @@ export class SearchPageComponent extends Component {
       activeListingId,
       onActivateListing,
     } = this.props;
+    console.log(listings);
+
     // eslint-disable-next-line no-unused-vars
     const { mapSearch, page, ...searchInURL } = parse(location.search, {
       latlng: ['origin'],
