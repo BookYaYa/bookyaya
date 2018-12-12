@@ -325,6 +325,7 @@ SearchPage.loadData = (params, search) => {
     page,
     perPage: RESULT_PAGE_SIZE,
     include: ['author', 'images'],
+    pub_listingType: 'author',
     'fields.image': ['variants.square-small', 'variants.square-small2x'],
     'limit.images': 1,
   });
