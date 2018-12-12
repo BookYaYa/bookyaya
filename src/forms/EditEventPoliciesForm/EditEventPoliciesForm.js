@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
+import { required } from '../../util/validators';
 import { Form as FinalForm } from 'react-final-form';
 import { intlShape, injectIntl, FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
@@ -43,12 +44,17 @@ export class EditEventPoliciesFormComponent extends Component {
             updateInProgress,
           } = fieldRenderProps;
 
-          const rulesLabelMessage = intl.formatMessage({
-            id: 'EditEventPoliciesForm.rulesLabel',
+          const capacityLabel = intl.formatMessage({
+            id: 'EditEventDescriptionForm.capacityLabel',
           });
-          const rulesPlaceholderMessage = intl.formatMessage({
-            id: 'EditEventPoliciesForm.rulesPlaceholder',
+          const capacityPlaceholder = intl.formatMessage({
+            id: 'EditEventDescriptionForm.capacityPlaceholder',
           });
+          const capacityRequired = required(
+            intl.formatMessage({
+              id: 'EditEventDescriptionForm.capacityRequired',
+            })
+          );
 
           const errorMessage = updateError ? (
             <p className={css.error}>
@@ -65,9 +71,15 @@ export class EditEventPoliciesFormComponent extends Component {
             <Form className={classes} onSubmit={handleSubmit}>
               {errorMessage}
 
-              <FieldSelect id="capacity" name="capacity" className={css.capacity} label="...">
+              <FieldSelect
+                id="capacity"
+                name="capacity"
+                className={css.capacity}
+                label={capacityLabel}
+                validate={capacityRequired}
+              >
                 <option disabled value="">
-                  ...
+                  {capacityPlaceholder}
                 </option>
                 {this.createOptions()}
               </FieldSelect>

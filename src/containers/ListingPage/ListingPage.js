@@ -230,6 +230,7 @@ export class ListingPageComponent extends Component {
     }
 
     const { description = '', price = null, title = '', publicData } = currentListing.attributes;
+    const listingType = publicData.listingType;
 
     const richTitle = (
       <span>
@@ -403,21 +404,23 @@ export class ListingPageComponent extends Component {
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
             <div>
-              <SectionImages
-                title={title}
-                listing={currentListing}
-                isOwnListing={isOwnListing}
-                editParams={{
-                  id: listingId.uuid,
-                  slug: listingSlug,
-                  type: 'edit',
-                  tab: 'description',
-                }}
-                imageCarouselOpen={this.state.imageCarouselOpen}
-                onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
-                handleViewPhotosClick={handleViewPhotosClick}
-                onManageDisableScrolling={onManageDisableScrolling}
-              />
+              {listingType === 'author' && (
+                <SectionImages
+                  title={title}
+                  listing={currentListing}
+                  isOwnListing={isOwnListing}
+                  editParams={{
+                    id: listingId.uuid,
+                    slug: listingSlug,
+                    type: 'edit',
+                    tab: 'description',
+                  }}
+                  imageCarouselOpen={this.state.imageCarouselOpen}
+                  onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                  handleViewPhotosClick={handleViewPhotosClick}
+                  onManageDisableScrolling={onManageDisableScrolling}
+                />
+              )}
               <div className={css.contentContainer}>
                 <div className={css.mainContent}>
                   <SectionHeading
@@ -431,34 +434,36 @@ export class ListingPageComponent extends Component {
                   />
                   <SectionDescription description={description} />
                 </div>
-                <SectionBooking
-                  title={title}
-                  listing={currentListing}
-                  isOwnListing={isOwnListing}
-                  isClosed={isClosed}
-                  isBook={isBook}
-                  unitType={unitType}
-                  price={price}
-                  formattedPrice={formattedPrice}
-                  priceTitle={priceTitle}
-                  hostLink={hostLink}
-                  showContactUser={showContactUser}
-                  handleBookingSubmit={handleBookingSubmit}
-                  richTitle={richTitle}
-                  handleBookButtonClick={handleBookButtonClick}
-                  handleMobileBookModalClose={handleMobileBookModalClose}
-                  timeSlots={timeSlots}
-                  fetchTimeSlotsError={fetchTimeSlotsError}
-                  authorDisplayName={authorDisplayName}
-                  onContactUser={this.onContactUser}
-                  isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
-                  onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
-                  sendEnquiryError={sendEnquiryError}
-                  sendEnquiryInProgress={sendEnquiryInProgress}
-                  onSubmitEnquiry={this.onSubmitEnquiry}
-                  currentUser={currentUser}
-                  onManageDisableScrolling={onManageDisableScrolling}
-                />
+                {listingType === 'author' && (
+                  <SectionBooking
+                    title={title}
+                    listing={currentListing}
+                    isOwnListing={isOwnListing}
+                    isClosed={isClosed}
+                    isBook={isBook}
+                    unitType={unitType}
+                    price={price}
+                    formattedPrice={formattedPrice}
+                    priceTitle={priceTitle}
+                    hostLink={hostLink}
+                    showContactUser={showContactUser}
+                    handleBookingSubmit={handleBookingSubmit}
+                    richTitle={richTitle}
+                    handleBookButtonClick={handleBookButtonClick}
+                    handleMobileBookModalClose={handleMobileBookModalClose}
+                    timeSlots={timeSlots}
+                    fetchTimeSlotsError={fetchTimeSlotsError}
+                    authorDisplayName={authorDisplayName}
+                    onContactUser={this.onContactUser}
+                    isEnquiryModalOpen={isAuthenticated && this.state.enquiryModalOpen}
+                    onCloseEnquiryModal={() => this.setState({ enquiryModalOpen: false })}
+                    sendEnquiryError={sendEnquiryError}
+                    sendEnquiryInProgress={sendEnquiryInProgress}
+                    onSubmitEnquiry={this.onSubmitEnquiry}
+                    currentUser={currentUser}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                  />
+                )}
               </div>
             </div>
           </LayoutWrapperMain>
